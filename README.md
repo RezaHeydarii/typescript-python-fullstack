@@ -1,81 +1,86 @@
-# Turborepo starter
+# Typescript-Python-Fullstack
 
-This is an official starter Turborepo.
+A **monorepo** built with **TurboRepo** that demonstrates a full-stack architecture combining **Python** and **TypeScript**. This Proof of Concept (POC) explores how both languages can coexist efficiently within the same project. It includes:
 
-## Using this example
+- A **Python backend** using [FastAPI].
+- A **frontend** written in **Next.js** using **TypeScript**.
+- **Cron jobs** for background tasks, written in Python.
 
-Run the following command:
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
 
-```sh
-npx create-turbo@latest
+## Features
+- **Monorepo structure** with **TurboRepo** for easy management of multiple projects.
+- **Python FastAPI/Flask** backend for serving APIs.
+- **Next.js** with **TypeScript** for the frontend, providing SSR and static site generation.
+- **Cron jobs** using Python for scheduled tasks.
+- **Seamless integration** between **TypeScript** and **Python** for full-stack development.
+
+## Tech Stack
+- **TurboRepo** for monorepo management
+- **Python** with [FastAPI] (backend) and cron jobs
+- **TypeScript** with **Next.js** (frontend)
+- **Docker** for containerization (optional)
+
+## Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/RezaHeydarii/typescript-python-fullstack.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd typescript-python-fullstack
+    ```
+3. Install dependencies:
+    ```bash
+    yarn install
+    ```
+4. Set up Python environment:
+    ```bash
+    yarn prepare-repo
+    ```
+5. Run TurboRepo to start all projects:
+    ```bash
+    turbo run dev
+    ```
+
+## Usage
+### Running the Backend (Python)
+   To start the backend API server, run:
+   ```bash
+   yarn dev:python-server
+   ```
+
+### Running the Frontend (Next.js)
+   To start the Next.js server, run:
+   ```bash
+   npm run dev:web-app
+   ```
+
+### Running Python Cron Jobs
+   To execute the cron jobs, run:
+   ```bash
+   cd apps/cronjobs
+   python run_cron.py
+   ```
+
+## Folder Structure
+```
+typescript-python-fullstack/
+├── apps/
+│   ├── server/         # Python FastAPI app
+│   ├── web-app/        # Next.js app with TypeScript
+│   └── data-extractors/        # Python cron jobs
+├── packages/            # Shared packages
+│   ├── eslint-config/         # eslint configs
+│   └── typescript-config/        # typescript configs
+├── turbo.json           # TurboRepo configuration
+├── package.json         # Dependencies and scripts
+└── README.md
 ```
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@my-repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@my-repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@my-repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+This structure should give clear instructions to anyone who wants to understand or contribute to your `typescript-python-fullstack` project. Let me know if you'd like any additional customizations!
