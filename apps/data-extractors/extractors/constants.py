@@ -13,7 +13,7 @@ FUND_URLS = [
     ),
 ]
 
-#DB_URL = "mysql+mysqlconnector://root:12345@0.0.0.0:3306/fin-tools"
+#DB_URL = "mysql+mysqlconnector://root:12345@0.0.0.0:3306/my-repo"
 DB_URL = "mysql+mysqlconnector://{user}:{password}@{host}/{db}".format(
     user=os.getenv("DATABASE_USER"),
     password=os.getenv("DATABASE_PASSWORD"),

@@ -1,5 +1,5 @@
 {
-  "name": "@fin-tools/web-app",
+  "name": "@my-repo/web-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,8 +19,8 @@
     "recharts": "^2.12.7"
   },
   "devDependencies": {
-    "@fin-tools/eslint-config": "*",
-    "@fin-tools/typescript-config": "*",
+    "@my-repo/eslint-config": "*",
+    "@my-repo/typescript-config": "*",
     "@types/moment-jalaali": "^0.7.9",
     "@types/node": "^20",
     "@types/react": "^18",

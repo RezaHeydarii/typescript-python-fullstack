@@ -11,7 +11,7 @@ services:
     build: 
       context: .
       target: builder
-    container_name: fin-tools-python-server
+    container_name: my-repo-python-server
     expose:
       - 5000
     ports:

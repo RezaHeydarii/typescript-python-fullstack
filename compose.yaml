@@ -15,7 +15,7 @@ services:
     build:
       context: ./apps/data-extractors
       dockerfile: ./Dockerfile
-    container_name: fin-tools-python-cronjobs
+    container_name: my-repo-python-cronjobs
     environment:
       - DATABASE_USER=ttt
       - DATABASE_PASSWORD=ttt
@@ -30,7 +30,7 @@ services:
     build:
       context: ./apps/server
       dockerfile: ./Dockerfile
-    container_name: fin-tools-python-backend
+    container_name: my-repo-python-backend
     environment:
       - DATABASE_USER=ttt
       - DATABASE_PASSWORD=ttt

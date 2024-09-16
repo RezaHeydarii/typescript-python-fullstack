@@ -1,5 +1,5 @@
 {
-  "name": "@fin-tools/eslint-config",
+  "name": "@my-repo/eslint-config",
   "version": "0.0.0",
   "private": true,
   "files": [
