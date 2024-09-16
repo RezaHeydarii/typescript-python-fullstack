@@ -1,0 +1,28 @@
+{
+  "name": "fin-tools",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "win:dev": "turbo win:dev",
+    "dev:python-server":"turbo dev --filter=@fin-tools/python-server",
+    "dev:web-app":"turbo dev --filter=@fin-tools/web-app",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare-repo": "turbo prepare-app"
+  },
+  "devDependencies": {
+    "@fin-tools/eslint-config": "*",
+    "@fin-tools/typescript-config": "*",
+    "prettier": "^3.2.5",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "yarn@1.22.15",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

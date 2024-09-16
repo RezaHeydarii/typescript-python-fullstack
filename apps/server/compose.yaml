@@ -1,0 +1,29 @@
+services:
+  mysqldb:
+    image: mysql:lts
+    command: '--default-authentication-plugin=mysql_native_password'
+    restart: always
+    volumes:
+      -db-data:/var/lib/mysql
+    networks:
+      - private
+  fastapi:
+    build: 
+      context: .
+      target: builder
+    container_name: fin-tools-python-server
+    expose:
+      - 5000
+    ports:
+      - '5000:5000'
+    environment:
+      - PORT=5000
+    depends_on:
+      - mysqldb
+
+
+networks:
+  public:
+  private:
+volumes:
+  db-data:

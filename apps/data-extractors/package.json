@@ -1,0 +1,11 @@
+{
+  "name": "@fin-tools/data-extractors",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Reza Heydari",
+  "license": "MIT",
+  "scripts": {
+    "prepare-app": "python -m venv .venv && source ./.venv/bin/activate && pip install -r requirements.txt",
+    "win:prepare-app":"python -m venv .venv && .venv\\Scripts\\activate.bat && pip install -r requirements.txt"
+  }
+}

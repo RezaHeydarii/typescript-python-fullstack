@@ -1,0 +1,52 @@
+services:
+  mysqldb:
+    image: mysql:8.0
+    restart: always
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=ttt
+      - MYSQL_ROOT_PASSWORD=ttt
+    networks:
+      - private
+    ports:
+      - '3306:3306'
+  cronjobs:
+    build:
+      context: ./apps/data-extractors
+      dockerfile: ./Dockerfile
+    container_name: fin-tools-python-cronjobs
+    environment:
+      - DATABASE_USER=ttt
+      - DATABASE_PASSWORD=ttt
+      - DATABASE_HOST=ttt
+      - DATABASE_DB_NAME=ttt
+    depends_on:
+      - mysqldb
+    networks:
+      - private
+
+  backend:
+    build:
+      context: ./apps/server
+      dockerfile: ./Dockerfile
+    container_name: fin-tools-python-backend
+    environment:
+      - DATABASE_USER=ttt
+      - DATABASE_PASSWORD=ttt
+      - DATABASE_HOST=ttt
+      - DATABASE_DB_NAME=ttt
+    depends_on:
+      - mysqldb
+    ports:
+      - 8000:80
+    networks:
+      - private
+      - public
+
+
+networks:
+  public:
+  private:
+volumes:
+  db-data:
