@@ -65,7 +65,7 @@ A **monorepo** built with **TurboRepo** that demonstrates a full-stack architect
    To execute the cron jobs, run:
    ```bash
    cd apps/cronjobs
-   python run_cron.py
+   python cronjob.py
    ```
 
 ## Folder Structure
